@@ -6,4 +6,8 @@ public class PositionX extends Position {
         checkInvalid(position);
         this.position = position;
     }
+
+    public PositionX() {
+        this(0);
+    }
 }

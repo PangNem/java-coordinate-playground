@@ -12,12 +12,12 @@ public class CoordinateTest {
     void create() {
         Coordinate coordinate = new Coordinate(10, 10);
 
-        assertThat(coordinate.isMatchX(10)).isTrue();
-        assertThat(coordinate.isMatchY(10)).isTrue();
+        assertThat(coordinate.isMatchX(new PositionX(10))).isTrue();
+        assertThat(coordinate.isMatchY(new PositionY(10))).isTrue();
 
         coordinate = new Coordinate(10);
 
-        assertThat(coordinate.isMatchX(10)).isTrue();
-        assertThat(coordinate.isMatchY(0)).isTrue();
+        assertThat(coordinate.isMatchX(new PositionX(10))).isTrue();
+        assertThat(coordinate.isMatchY(new PositionY())).isTrue();
     }
 }

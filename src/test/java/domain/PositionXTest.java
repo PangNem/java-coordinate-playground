@@ -22,7 +22,7 @@ public class PositionXTest {
     @Test
     @DisplayName("포지션X 테스트")
     void positionX() {
-        assertThat(new PositionX(0).isMatch(0)).isTrue();
-        assertThat(new PositionX(10).isMatch(10)).isTrue();
+        assertThat(new PositionX()).isEqualTo(new PositionX());
+        assertThat(new PositionX(10)).isEqualTo(new PositionX(10));
     }
 }
