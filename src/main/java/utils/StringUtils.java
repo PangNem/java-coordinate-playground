@@ -12,4 +12,14 @@ public class StringUtils {
             .map(string -> string.replace(")", ""))
             .collect(Collectors.toList());
     }
+
+    public static List<Integer> splitAndToInt(String parsedUserInput) {
+        return Arrays.stream(parsedUserInput.split(","))
+            .map(StringUtils::toInt)
+            .collect(Collectors.toList());
+    }
+
+    private static int toInt(String string) {
+        return Integer.parseInt(string);
+    }
 }
