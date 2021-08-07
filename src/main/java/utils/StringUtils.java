@@ -14,9 +14,15 @@ public class StringUtils {
     }
 
     public static List<Integer> splitAndToInt(String parsedUserInput) {
-        return Arrays.stream(parsedUserInput.split(","))
+        List<Integer> splitedList = Arrays.stream(parsedUserInput.split(","))
             .map(StringUtils::toInt)
             .collect(Collectors.toList());
+
+        if (splitedList.size() == 1) {
+            splitedList.add(0);
+        }
+
+        return splitedList;
     }
 
     private static int toInt(String string) {

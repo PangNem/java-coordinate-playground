@@ -20,7 +20,7 @@ public class StringUtilsTest {
         parsedUserInput = "10";
         actual = StringUtils.splitAndToInt(parsedUserInput);
 
-        assertThat(actual).isEqualTo(Arrays.asList(10));
+        assertThat(actual).isEqualTo(Arrays.asList(10, 0));
     }
 
     @Test
