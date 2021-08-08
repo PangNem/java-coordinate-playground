@@ -12,7 +12,32 @@ public class Calculator {
             return getTwoCoordinateDistance(coordinateList);
         }
 
+        if (coordinateList.size() == 3) {
+            return getThreeCoordinateDistance(coordinateList);
+        }
+
         return getFourCoordinateDistance(coordinateList);
+    }
+
+    private static long getThreeCoordinateDistance(List<Coordinate> coordinateList) {
+        List<Coordinate> coordinateListGroup1 = Arrays
+            .asList(coordinateList.get(0), coordinateList.get(1));
+        List<Coordinate> coordinateListGroup2 = Arrays
+            .asList(coordinateList.get(1), coordinateList.get(2));
+        List<Coordinate> coordinateListGroup3 = Arrays
+            .asList(coordinateList.get(2), coordinateList.get(0));
+
+        double a = getTwoCoordinateDistance(coordinateListGroup1);
+        double b = getTwoCoordinateDistance(coordinateListGroup2);
+        double c = getTwoCoordinateDistance(coordinateListGroup3);
+
+        return heron(a, b, c);
+    }
+
+    private static long heron(double a, double b, double c) {
+        double s = (a + b + c) / 2;
+
+        return Math.round(Math.sqrt(s * (s - a) * (s - b) * (s - c)));
     }
 
     private static double getFourCoordinateDistance(List<Coordinate> coordinateList) {

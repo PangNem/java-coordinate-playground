@@ -10,13 +10,24 @@ import org.junit.jupiter.api.Test;
 class CalculatorTest {
 
     @Test
+    @DisplayName("삼각형의 면적을 계산한다")
+    void calculate_three_coordinates() {
+        Coordinates coordinates = new Coordinates(
+            Arrays.asList(new Coordinate(10, 10), new Coordinate(14, 15), new Coordinate(20, 8)));
+
+        double actual = Calculator.calculate(coordinates);
+
+        assertThat(actual).isEqualTo(29);
+    }
+
+    @Test
     @DisplayName("사각형의 면적을 계산한다")
     void calculate_four_coordinates() {
         Coordinates coordinates = new Coordinates(Arrays
             .asList(new Coordinate(10, 10), new Coordinate(22, 10), new Coordinate(22, 18),
                 new Coordinate(10, 18)));
 
-        int actual = (int) Calculator.calculate(coordinates);
+        double actual = Calculator.calculate(coordinates);
 
         assertThat(actual).isEqualTo(96);
     }
