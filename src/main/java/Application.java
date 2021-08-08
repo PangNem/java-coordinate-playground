@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import utils.StringUtils;
 import views.InputView;
+import views.ResultView;
 
 public class Application {
 
     public static void main(String[] args) {
         Coordinates coordinates = getUserInputCoordinates();
+        ResultView.printResult(coordinates);
     }
 
     private static Coordinates getUserInputCoordinates() {

@@ -22,4 +22,11 @@ public class Coordinate {
         return y.equals(position);
     }
 
+    public PositionX getPositionX() {
+        return x;
+    }
+
+    public PositionY getPositionY() {
+        return y;
+    }
 }

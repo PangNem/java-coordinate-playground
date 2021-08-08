@@ -27,4 +27,8 @@ public class Coordinates {
     public int hashCode() {
         return Objects.hash(coordinates);
     }
+
+    public List<Coordinate> getCoordinates() {
+        return coordinates;
+    }
 }
