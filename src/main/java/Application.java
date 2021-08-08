@@ -45,6 +45,4 @@ public class Application {
 
         return new Coordinates(coordinateList);
     }
-
-
 }

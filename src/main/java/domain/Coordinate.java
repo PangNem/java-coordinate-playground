@@ -2,8 +2,8 @@ package domain;
 
 public class Coordinate {
 
-    private PositionX x;
-    private PositionY y;
+    private final PositionX x;
+    private final PositionY y;
 
     public Coordinate(int x) {
         this(x, 0);
