@@ -1,3 +1,4 @@
+import domain.Calculator;
 import domain.Coordinate;
 import domain.Coordinates;
 import java.util.ArrayList;
@@ -10,7 +11,10 @@ public class Application {
 
     public static void main(String[] args) {
         Coordinates coordinates = getUserInputCoordinates();
-        ResultView.printResult(coordinates);
+
+        double result = Calculator.calculate(coordinates);
+
+        ResultView.printResult(result);
     }
 
     private static Coordinates getUserInputCoordinates() {
