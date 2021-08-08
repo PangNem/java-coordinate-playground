@@ -5,7 +5,6 @@ import java.util.List;
 
 public class Calculator {
 
-
     public static double calculate(Coordinates coordinates) {
         List<Coordinate> coordinateList = coordinates.getCoordinates();
 
@@ -30,15 +29,15 @@ public class Calculator {
         Coordinate coordinate1 = coordinateList.get(0);
         Coordinate coordinate2 = coordinateList.get(1);
 
-        PositionX coordinate1PositionX = coordinate1.getPositionX();
-        PositionY coordinate1PositionY = coordinate1.getPositionY();
+        return getDistanceFromTwoCoordinate(coordinate1, coordinate2);
+    }
 
-        PositionX coordinate2PositionX = coordinate2.getPositionX();
-        PositionY coordinate2PositionY = coordinate2.getPositionY();
-
+    private static double getDistanceFromTwoCoordinate(Coordinate coordinate1,
+        Coordinate coordinate2) {
         return Math.sqrt(
-            Math.pow(coordinate1PositionX.position - coordinate2PositionX.position, 2) + Math
+            Math.pow(coordinate1.getPositionX().position - coordinate2.getPositionX().position, 2)
+                + Math
                 .pow(
-                    coordinate1PositionY.position - coordinate2PositionY.position, 2));
+                    coordinate1.getPositionY().position - coordinate2.getPositionY().position, 2));
     }
 }
