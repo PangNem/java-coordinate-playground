@@ -12,8 +12,8 @@ public class RentCompany {
         StringBuilder stringBuilder = new StringBuilder();
 
         cars.forEach(car -> {
-            String carName = car.getClass().getSimpleName();
-            int liter = car.getLiter();
+            String carName = car.getName();
+            int liter = (int) car.getDistancePerLiter();
 
             stringBuilder.append(String.format("%s : %s리터", carName, liter));
             stringBuilder.append(System.getProperty("line.separator"));
