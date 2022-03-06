@@ -36,4 +36,24 @@ public class Coordinate {
                         + Math.pow((y - otherY), 2)
         );
     }
+
+    public boolean matchX(Coordinate coordinate) {
+        return this.x.equals(coordinate.getX());
+    }
+
+    public double getHeightWith(Coordinate coordinate) {
+        double width = this.y.getY() - coordinate.getY().getY();
+
+        return Math.abs(width);
+    }
+
+    public boolean matchY(Coordinate coordinate) {
+        return this.y.equals(coordinate.getY());
+    }
+
+    public double getWidthWith(Coordinate coordinate) {
+        double height = this.x.getX() - coordinate.getX().getX();
+
+        return Math.abs(height);
+    }
 }
