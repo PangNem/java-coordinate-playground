@@ -16,18 +16,24 @@ public class Coordinate {
         return new Coordinate(x, y);
     }
 
-    public double getX() {
-        return this.x.getX();
+    public X getX() {
+        return this.x;
     }
 
-    public double getY() {
-        return this.y.getY();
+    public Y getY() {
+        return this.y;
     }
 
-    public double calculateDistanceWith(Coordinate coordinate) {
+    public double calculateDistanceWith(Coordinate otherCoordinate) {
+        double x = this.x.getX();
+        double y = this.y.getY();
+
+        double otherX = otherCoordinate.x.getX();
+        double otherY = otherCoordinate.y.getY();
+
         return Math.sqrt(
-                Math.pow((this.getX() - coordinate.getX()), 2)
-                        + Math.pow((this.getY() - coordinate.getY()), 2)
+                Math.pow((x - otherX), 2)
+                        + Math.pow((y - otherY), 2)
         );
     }
 }
