@@ -34,14 +34,14 @@ ex) git checkout -b apply-feedback
 
 ToDo
 
-- [ ] InputView#input(String coordinate) - double distance
-    - [ ] 좌표 입력받기 `(10,10)-(14,15)`
+- [x] InputView#input(String coordinate) - double distance
+    - [x] 좌표 입력받기 `(10,10)-(14,15)`
         - x, y 최대 24
         - 입력범위 초과시 다시 입력
         - 좌표값 두 개 입력 시 두 점을 잇는 직선으로 가정
-    - [ ] 두 점 사이의 거리를 double 형태로 리턴한다.
+    - [x] 두 점 사이의 거리를 double 형태로 리턴한다.
 - [ ] OutputView#output(double distance) - String result
     - [ ] 두 점 사이의 거리를 입력받는다. `6.403124`
     - [ ] 문구와 함께 리턴한다. `두 점 사이 거리는 6.403124`
-- [ ] Coordinate
+- [x] Coordinate
     - 좌표 클래스. x, y 좌표를 가짐
