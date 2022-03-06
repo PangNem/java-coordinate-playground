@@ -13,7 +13,7 @@ public class RentCompany {
 
         cars.forEach(car -> {
             String carName = car.getName();
-            int liter = (int) car.getDistancePerLiter();
+            int liter = (int) car.getChargeQuantity();
 
             stringBuilder.append(String.format("%s : %s리터", carName, liter));
             stringBuilder.append(System.getProperty("line.separator"));

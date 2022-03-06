@@ -1,4 +1,4 @@
-public class Avante extends Car {
+public class Avante implements Car {
     private final int tripDistance;
 
     public Avante(int tripDistance) {
@@ -9,15 +9,15 @@ public class Avante extends Car {
      * 리터당 이동 거리. 즉, 연비
      */
     @Override
-    double getDistancePerLiter() {
-        return this.tripDistance / 15;
+    public double getDistancePerLiter() {
+        return 15;
     }
 
     /**
      * 여행하려는 거리
      */
     @Override
-    double getTripDistance() {
+    public double getTripDistance() {
         return this.tripDistance;
     }
 
@@ -25,7 +25,7 @@ public class Avante extends Car {
      * 차종의 이름
      */
     @Override
-    String getName() {
+    public String getName() {
         return this.getClass().getSimpleName();
     }
 }
