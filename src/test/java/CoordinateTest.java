@@ -32,8 +32,8 @@ class CoordinateTest {
             String inputViewCoordinate = "(10,12)";
             Coordinate coordinate = Coordinate.from(inputViewCoordinate);
 
-            assertThat(coordinate.getX().getX()).isEqualTo(10);
-            assertThat(coordinate.getY().getY()).isEqualTo(12);
+            assertThat(coordinate.getX()).isEqualTo(new X(10));
+            assertThat(coordinate.getY()).isEqualTo(new Y(12));
         }
 
     }

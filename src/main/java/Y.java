@@ -15,4 +15,25 @@ public class Y {
     public double getY() {
         return y;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        Y y1 = (Y) o;
+
+        return Double.compare(y1.y, y) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        long temp = Double.doubleToLongBits(y);
+        return (int) (temp ^ (temp >>> 32));
+    }
 }
