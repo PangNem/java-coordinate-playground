@@ -1,11 +1,8 @@
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Assertions.offset;
 
 class CoordinateTest {
@@ -39,44 +36,5 @@ class CoordinateTest {
             assertThat(coordinate.getY()).isEqualTo(12);
         }
 
-    }
-
-    @Nested
-    @DisplayName("생성자는")
-    class Describe_constructor {
-
-        @Nested
-        @DisplayName("24가 넘거나 -24보다 작은값이 주어질 경우")
-        class Context_greaterThen24OrLessThenMinus24 {
-
-            @ParameterizedTest
-            @ValueSource(ints = {25, -25})
-            @DisplayName("IllegalArgumentException을 던진다")
-            void It_throwsIllegalArgumentException(int inValidValue) {
-                final int validValue = 24;
-
-                assertThatThrownBy(() -> new Coordinate(inValidValue, validValue))
-                        .isInstanceOf(IllegalArgumentException.class);
-
-                assertThatThrownBy(() -> new Coordinate(validValue, inValidValue))
-                        .isInstanceOf(IllegalArgumentException.class);
-
-            }
-        }
-
-        @Nested
-        @DisplayName("유효한 값이 주어질 경우")
-        class Context_givenValidValue {
-
-            @ParameterizedTest
-            @ValueSource(ints = {24, -24})
-            @DisplayName("생성한 좌표를 리턴한다")
-            void It_returnsCreatedCoordinate(int validValue) {
-                Coordinate coordinate = new Coordinate(validValue, validValue);
-
-                assertThat(coordinate.getX()).isEqualTo(validValue);
-                assertThat(coordinate.getY()).isEqualTo(validValue);
-            }
-        }
     }
 }

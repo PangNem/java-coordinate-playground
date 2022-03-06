@@ -1,25 +1,10 @@
 public class Coordinate {
-    public static final int MAX_VALUE = 24;
-    public static final int MIN_VALUE = -24;
-
-    private final double x;
-    private final double y;
+    private final X x;
+    private final Y y;
 
     public Coordinate(double x, double y) {
-        validate(x, y);
-
-        this.x = x;
-        this.y = y;
-    }
-
-    private void validate(double x, double y) {
-        if (x > MAX_VALUE || y > MAX_VALUE) {
-            throw new IllegalArgumentException();
-        }
-
-        if (x < MIN_VALUE || y < MIN_VALUE) {
-            throw new IllegalArgumentException();
-        }
+        this.x = new X(x);
+        this.y = new Y(y);
     }
 
     public static Coordinate from(String inputViewCoordinate) {
@@ -32,11 +17,11 @@ public class Coordinate {
     }
 
     public double getX() {
-        return x;
+        return this.x.getX();
     }
 
     public double getY() {
-        return y;
+        return this.y.getY();
     }
 
     public double calculateDistanceWith(Coordinate coordinate) {
