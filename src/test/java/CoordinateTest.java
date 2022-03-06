@@ -46,8 +46,8 @@ class CoordinateTest {
     class Describe_constructor {
 
         @Nested
-        @DisplayName("24가 넘는 값이 주어질 경우")
-        class Context_greaterThen24 {
+        @DisplayName("24가 넘거나 -24보다 작은값이 주어질 경우")
+        class Context_greaterThen24OrLessThenMinus24 {
 
             @ParameterizedTest
             @ValueSource(ints = {25, -25})
@@ -61,6 +61,21 @@ class CoordinateTest {
                 assertThatThrownBy(() -> new Coordinate(validValue, inValidValue))
                         .isInstanceOf(IllegalArgumentException.class);
 
+            }
+        }
+
+        @Nested
+        @DisplayName("유효한 값이 주어질 경우")
+        class Context_givenValidValue {
+
+            @ParameterizedTest
+            @ValueSource(ints = {24, -24})
+            @DisplayName("생성한 좌표를 리턴한다")
+            void It_returnsCreatedCoordinate(int validValue) {
+                Coordinate coordinate = new Coordinate(validValue, validValue);
+
+                assertThat(coordinate.getX()).isEqualTo(validValue);
+                assertThat(coordinate.getY()).isEqualTo(validValue);
             }
         }
     }
