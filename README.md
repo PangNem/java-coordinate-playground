@@ -41,10 +41,10 @@ ex) git checkout -b apply-feedback
     - [x] outputResult
         - 단, 화면에 출력하는 부분은 제외
 
-- [ ] Figure
+- [x] Figure
     - [x] Line
         - 선(두 점 사이의 거리)
     - [x] Rectangle
         - 직사각형(넓이)
-    - [ ] Triangle
+    - [x] Triangle
         - 삼각형(넓이)
