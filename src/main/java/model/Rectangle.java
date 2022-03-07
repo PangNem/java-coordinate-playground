@@ -5,6 +5,8 @@ import java.util.List;
 import static java.lang.Math.floor;
 
 public class Rectangle extends AbstractFigure {
+    public static final Integer SIZE = 4;
+
     public Rectangle(List<Point> points) {
         super(points);
     }

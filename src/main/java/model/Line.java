@@ -3,6 +3,8 @@ package model;
 import java.util.List;
 
 public class Line extends AbstractFigure {
+    public static final Integer SIZE = 2;
+
     public Line(List<Point> points) {
         super(points);
     }
@@ -20,5 +22,4 @@ public class Line extends AbstractFigure {
 
         return pointA.calculateWith(pointB);
     }
-
 }

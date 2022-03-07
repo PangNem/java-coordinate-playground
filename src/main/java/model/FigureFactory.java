@@ -9,13 +9,13 @@ public class FigureFactory {
     private static final Map<Integer, Function<List<Point>, Figure>> classifier = new HashMap<>();
 
     static {
-        classifier.put(2, Line::new);
-        classifier.put(4, Rectangle::new);
+        classifier.put(Line.SIZE, Line::new);
+        classifier.put(Rectangle.SIZE, Rectangle::new);
     }
 
     public static Figure create(List<Point> points) {
         int size = points.size();
-        if (size == 3 || size < 2 || size > 4) {
+        if (size == Triangle.SIZE || size < Line.SIZE || size > Rectangle.SIZE) {
             throw new IllegalArgumentException("허용되지 않은 좌표 허용값입니다.");
         }
 
