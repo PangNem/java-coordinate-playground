@@ -32,17 +32,17 @@ ex) git checkout -b apply-feedback
 
 ### ToDo
 
-- [ ] Point
+- [x] Point
     - x, y 좌표를 관리하는 객체
-- [ ] InputView
-    - [ ] inputCoordinate
+- [x] InputView
+    - [x] inputCoordinate
         - point 리스트 문자열을 입력받는다
-- [ ] OutputView
-    - [ ] outputResult
+- [x] OutputView
+    - [x] outputResult
         - 단, 화면에 출력하는 부분은 제외
 
 - [ ] Figure
-    - [ ] Line
+    - [x] Line
         - 선(두 점 사이의 거리)
     - [ ] Rectangle
         - 직사각형(넓이)
