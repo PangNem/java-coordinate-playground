@@ -2,13 +2,14 @@ package model;
 
 import java.util.List;
 
-public class Line {
+public class Line implements Figure {
     private final List<Point> points;
 
     public Line(List<Point> points) {
         this.points = points;
     }
 
+    @Override
     public String getResult() {
         double distance = calculateDistance();
 
