@@ -2,11 +2,9 @@ package model;
 
 import java.util.List;
 
-public class Line implements Figure {
-    private final List<Point> points;
-
+public class Line extends AbstractFigure {
     public Line(List<Point> points) {
-        this.points = points;
+        super(points);
     }
 
     @Override
@@ -17,8 +15,8 @@ public class Line implements Figure {
     }
 
     private double calculateDistance() {
-        Point pointA = points.get(0);
-        Point pointB = points.get(1);
+        Point pointA = getPoints().get(0);
+        Point pointB = getPoints().get(1);
 
         return pointA.calculateWith(pointB);
     }
