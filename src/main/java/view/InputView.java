@@ -40,7 +40,7 @@ public class InputView {
     }
 
     private boolean valid(String coordinates) {
-        String regex = "(\\([0-9]{1,2},[0-9]{1,2}\\))(-\\([0-9]{1,2},[0-9]{1,2}\\))?";
+        String regex = "(\\([0-9]{1,2},[0-9]{1,2}\\))(-\\([0-9]{1,2},[0-9]{1,2}\\)){0,3}";
         Pattern compile = Pattern.compile(regex);
         Matcher matcher = compile.matcher(coordinates);
 

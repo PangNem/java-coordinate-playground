@@ -26,4 +26,16 @@ class InputViewTest {
                 new Point(14, 15)
         ));
     }
+
+    @Test
+    void 네점_입력_테스트() {
+        List<Point> points = inputView.inputCoordinates("(10,10)-(22,10)-(22,18)-(10,18)");
+
+        assertThat(points).isEqualTo(Arrays.asList(
+                new Point(10, 10),
+                new Point(22, 10),
+                new Point(22, 18),
+                new Point(10, 18)
+        ));
+    }
 }

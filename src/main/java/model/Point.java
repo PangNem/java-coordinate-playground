@@ -22,6 +22,14 @@ public class Point {
         );
     }
 
+    public boolean matchX(Point point) {
+        return this.x == point.x;
+    }
+
+    public boolean matchY(Point point) {
+        return this.y == point.y;
+    }
+
     private void checkLessThenMin(int x, int y) {
         if (x > MAX_VALUE || y > MAX_VALUE) {
             throw new IllegalArgumentException();
@@ -56,5 +64,4 @@ public class Point {
         result = 31 * result + y;
         return result;
     }
-
 }

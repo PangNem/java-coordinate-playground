@@ -44,7 +44,7 @@ ex) git checkout -b apply-feedback
 - [ ] Figure
     - [x] Line
         - 선(두 점 사이의 거리)
-    - [ ] Rectangle
+    - [x] Rectangle
         - 직사각형(넓이)
     - [ ] Triangle
         - 삼각형(넓이)
