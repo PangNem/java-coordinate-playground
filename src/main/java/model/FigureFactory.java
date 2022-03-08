@@ -16,11 +16,15 @@ public class FigureFactory {
 
     public static Figure create(List<Point> points) {
         int size = points.size();
-        if (size < Line.SIZE || size > Rectangle.SIZE) {
-            throw new IllegalArgumentException("허용되지 않은 좌표 허용값입니다.");
+        if (!allowedCount(size)) {
+            throw new IllegalArgumentException("허용되지 않은 좌표 개수입니다.");
         }
 
         return classifier.get(size)
                 .apply(points);
+    }
+
+    private static boolean allowedCount(int size) {
+        return size >= Line.SIZE && size <= Rectangle.SIZE;
     }
 }
